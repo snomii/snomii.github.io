@@ -1,0 +1,79 @@
+<html>
+  <head>
+	<title>Overly Accurate Time</title>
+	<link rel="stylesheet" type="text/CSS" href="css.css">
+	<script>
+	var runloop = setInterval(getTime, 1);
+	var rainbowloop = setTimeout(rainbow, 0);
+	var Bg = null;
+	var root = document.querySelector(":root");
+	function sleep(ms) {
+  		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+	function getTime() {
+	  	var d = new Date();
+		var p = document.getElementById("time");
+    	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    	var hours = ["12 AM", "1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"]
+    	var weekday = days[d.getDay()];
+    	var year = d.getFullYear();
+    	var month = months[d.getMonth()];
+    	var day = d.getDate();
+    	var hour1 = hours[d.getHours()];
+  		var hour = d.getHours();
+    	var minute = d.getMinutes();
+    	var second = d.getSeconds();
+    	var ms = d.getMilliseconds();
+  		var day1 = d.getDate();
+  		var month1 = d.getMonth()+1;
+	  	
+		p.innerHTML = weekday + ", " + month + " " + day + ", " + year + " @ " + hour1 + ", " + year + ":" + month1 + ":" + day1 + ":" + hour + ":" + minute + ":" + second + ":" + ms;
+	}
+	async function rainbow() {
+	  	Bg = "#FFB1B0";
+		root.style.setProperty("--Bg", Bg);
+	  	await new Promise(r => setTimeout(r, 500));
+	  	Bg = "#FFDFBE";
+		root.style.setProperty("--Bg", Bg);
+	    await new Promise(r => setTimeout(r, 500));
+	  	Bg = "#FFFFBF";
+		root.style.setProperty("--Bg", Bg);
+	    await new Promise(r => setTimeout(r, 500));
+	  	Bg = "#B4F0A7";
+		root.style.setProperty("--Bg", Bg);
+	    await new Promise(r => setTimeout(r, 500));
+	  	Bg = "#A9D1F7";
+		root.style.setProperty("--Bg", Bg);
+	    await new Promise(r => setTimeout(r, 500));
+	  	Bg = "#CC99FF";
+		root.style.setProperty("--Bg", Bg);
+	  	await new Promise(r => setTimeout(r, 500));
+	  	setTimeout(rainbow, 1)
+	}
+	</script>
+	<style>
+	:root {
+	  --Bg: #FFB1B0;
+	}
+	body {
+	  color:#101010;
+	  background-color: var(--Bg);
+	  font-family: monospace;
+	  vertical-align: center;
+	  margin: auto;
+	}
+	.center {
+	  padding: 25%;
+	}
+	</style>
+  </head>
+  <body>
+	<center>
+	  <div class="center">
+		<h1>- ~ TIME ~ -</h1>
+	  	<p id="time">-</p>
+	  </div>
+	</center>
+  </body>
+</html>
