@@ -15,7 +15,7 @@
 		var p = document.getElementById("time");
     	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    	var hours = ["12 AM", "1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"]
+    	var hours = [`12:${d.getMinutes()} AM`, `1:${d.getMinutes()} AM`, `2:${d.getMinutes()} AM`, `3:${d.getMinutes()} AM`, `4:${d.getMinutes()} AM`, `5:${d.getMinutes()} AM`, `6:${d.getMinutes()} AM`, `7:${d.getMinutes()} AM`, `8:${d.getMinutes()} AM`, `9:${d.getMinutes()} AM`, `10:${d.getMinutes()} AM`, `11:${d.getMinutes()} AM`, `12:${d.getMinutes()} PM`, `1:${d.getMinutes()} PM`, `2:${d.getMinutes()} PM`, `3:${d.getMinutes()} PM`, `4:${d.getMinutes()} PM`, `5:${d.getMinutes()} PM`, `6:${d.getMinutes()} PM`, `7:${d.getMinutes()} PM`, `8:${d.getMinutes()} PM`, `9:${d.getMinutes()} PM`, `10:${d.getMinutes()} PM`, `11:${d.getMinutes()} PM`]
     	var weekday = days[d.getDay()];
     	var year = d.getFullYear();
     	var month = months[d.getMonth()];
